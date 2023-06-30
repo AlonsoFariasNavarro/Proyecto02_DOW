@@ -1,0 +1,22 @@
+$theme-colors:(
+    "primary" : #074469,
+    "secondary" : #026597,
+    "success" : #198754,
+    "info" : #0EADD8,
+    "warning" : #FCAF27,
+    "danger" : #D51E2D,
+    "ligh" : #EEEEEE,
+    "dark" : #333333,
+);
+
+$custom-colors:(
+    "white" : #ffffff,
+    "black" : #000000,
+    "morado" : #990099,
+);
+
+$theme-colors: map-merge($theme-colors,$custom-colors);
+
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
