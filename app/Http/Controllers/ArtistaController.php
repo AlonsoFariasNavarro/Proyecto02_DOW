@@ -12,10 +12,15 @@ class ArtistaController extends Controller
     public function registrar(){
         return view('artista.registrar');
     }
+    public function index(){
+        return view('artista.index');
+    }
+    
 
     
     public function store(Request $request){
         $cuenta = new Cuenta();
+        $cuenta->perfil_id =2;
         $cuenta->user = $request->user;
         $cuenta->password = $request->password;
         $cuenta->nombre = $request->nombre;

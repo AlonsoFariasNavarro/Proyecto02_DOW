@@ -26,16 +26,16 @@
                         </div>
                         <div class="col" style="width: 30rem;">
                             <div class="card p-3">
-                                <form action="}" method="POST">
+                                <form action="{{route('usuarios.autenticar')}}" method="POST">
                                     <!-- @method('PUT') -->
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="username" class="form-label">Ingresa nombre de usuario </label>
-                                        <input type="text" id="username" class="form-control">
+                                        <label for="user" class="form-label">Ingresa nombre de usuario </label>
+                                        <input type="text" id="user" name="user" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Contraseña</label>
-                                        <input type="password" id="password" class="form-control">
+                                        <input type="password" name="password" id="password" class="form-control">
                                     </div>
                                     <div class="row">                                      
                                         <div class="col-4 py-4">
