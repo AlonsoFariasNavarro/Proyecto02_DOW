@@ -5,7 +5,7 @@
         <div class="row">
             <!-- COL de los cards -->
             <div class="col d-flex justify-content-end mb-2">
-                    <select class="form-select" aria-label="a">
+                    <select class="form-select" >
                         <option selected hidden>Filtrar Artistas</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
