@@ -51,8 +51,9 @@
                                         <label for="user">Ingrese Contraseña</label>
                                         <input name="user" type="text">
                                     </div>
-                                    <div class="col">
-                                        <button class="brn btn-success">a</button>
+                                    <div class="col text-end">
+                                        <br>
+                                        <button class="brn btn-primary">Iniciar Sesion</button>
                                     </div>
                                 </div>
                             </div>
