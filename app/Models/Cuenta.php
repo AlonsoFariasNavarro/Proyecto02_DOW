@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cuenta extends Authenticatable
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
     protected $table = 'cuentas';
     protected $primaryKey = 'user';
     protected $keyType = 'string';
