@@ -8,5 +8,7 @@ use App\Models\Perfil;
 
 class ImagenController extends Controller
 {
-    //
+    public function index(){
+        return view('imagenes.index');
+    }
 }
