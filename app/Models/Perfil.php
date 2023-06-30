@@ -10,4 +10,11 @@ class Perfil extends Model
     use HasFactory;
     protected $table = 'perfiles';
     public $timestamps = false;
+
+
+
+    public function equipo():BelongsTo{
+        return $this->belongsTo(Equipo::class);
+    }
 }
+
