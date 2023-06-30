@@ -12,14 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('imagenes', function (Blueprint $table) {
-            $table->id();
+            $table->integer("id")->autoIncrement();
             $table->string('titulo',20);
             $table->string('archivo',100);
             $table->boolean('baneada');
             $table->text('motivo_ban');
-            $table->string('cuenta_user');
+
+            $table->string('cuenta_user',20);
 
             $table->foreign('cuenta_user')->references('user')->on('cuentas');
+
+            
+            
+           
         });
     }
 
