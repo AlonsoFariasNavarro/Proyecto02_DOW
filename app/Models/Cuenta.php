@@ -14,4 +14,13 @@ class Cuenta extends Model
     public $incrementing = false;
     public $timestamps = false;
 
+
+
+    public function perfil():BelongTo{
+        return $this->belongTo(Perfil::class);
+    }
+
+    public function imagenes():HasMany{
+        return $this->hasMany(Imagen::class);
+    }
 }

@@ -10,4 +10,9 @@ class Imagen extends Model
     use HasFactory;
     protected $table ='imagenes';
     public $timestamps = false;
+
+
+    public function cuenta():BelongTo{
+        return $this->belongTo(Cuenta::class);
+    }
 }
