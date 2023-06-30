@@ -12,5 +12,6 @@ class Cuenta extends Model
     protected $primaryKey = 'user';
     protected $keyType = 'string';
     public $incrementing = false;
+    public $timestamps = false;
 
 }
