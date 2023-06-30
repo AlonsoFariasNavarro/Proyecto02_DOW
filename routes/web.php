@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ImagenController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArtistaController;
+use App\Http\Controllers\PublicController;
 
-Route::get('/',[ImagenController::class,'index'])->name('images.index');
+Route::get('/',[PublicController::class,'index'])->name('public.index');
