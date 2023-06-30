@@ -12,10 +12,8 @@ class Perfil extends Model
     
     public $timestamps = false;
 
-
-
-    public function equipo():BelongsTo{
-        return $this->belongsTo(Equipo::class);
+    public function cuentas():HasMany{
+        return $this->hasMany(Cuenta::class);
     }
 }
 
