@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-fluid min-vh-100" style="background: red;">
+    <div class="container-fluid min-vh-100" style="background: #0eb396;">
         <div class="row">
             <div class="col d-flex flex-column align-items-center py-5">
                 <div class="card">
@@ -19,34 +19,32 @@
                     </span>
                         <h1>Agregar usuarios</h1>
                         <div class="card-body">
-                            @csrf
-                            <form method="POST">
+                            
+                            <form method="POST" action="{{route('artista.store')}}">
+                                @csrf
                                 <div class="mb-3">
                                     <label for="NombreUsuario" class="form-label">Nombre de usuario</label>
-                                    <input type="text" class="form-control" id="NombreUsuario" aria-describedby="emailHelp">
+                                    <input type="text" class="form-control" id="user" name="user" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="Contraseña">
+                                    <input type="password" class="form-control" id="password"name="password">
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1">
+                                    <input type="text" class="form-control" id="nombre"name="nombre">
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">Apellido</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                                              
+                                    <input type="text" class="form-control" id="apellido" name="apellido">
+                                </div>                                                             
                                 <button type="submit" class="btn btn-primary">Agregar usuario</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-
+        </div>        
     </div>
     
 </body>
