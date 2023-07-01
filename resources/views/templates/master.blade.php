@@ -43,7 +43,7 @@
                 </ul>
                 </li>
             </ul>
-                <a href="#" class="btn btn-success">Iniciar Sesion</a>
+                <a href="{{route('public.login')}}" class="btn btn-success">Iniciar Sesion</a>
         </div>
     </div>
     </nav>
