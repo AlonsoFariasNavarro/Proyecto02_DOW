@@ -34,6 +34,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{Route('admin.index')}}">Cuentas</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{Route('admin.fotos')}}">Fotos</a>
+                        </li>
                     @elseif(auth()->user()->perfil_id == 2)
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{Route('public.index')}}">Inicio</a>

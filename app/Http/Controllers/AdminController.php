@@ -41,4 +41,28 @@ class AdminController extends Controller
         $cuenta->save();
         return redirect()->route('admin.index');
     }
+
+    public function fotos(){
+        $imagenes = Imagen::orderBy('id')->get();
+        $perfiles = Perfil::orderBy('id')->get();
+        $cuentas = Cuenta::orderBy('user')->get();
+        return view('admin.fotos',compact(['imagenes','cuentas','perfiles']));
+    }
+
+    public function banear(Request $request, $titulo){
+        $foto = Imagen::where('titulo',$titulo)->first();
+
+    }
+
+    public function destroy($cuenta){
+        $imagenesEliminadas = Imagen::where('cuenta_user',$cuenta)->first();
+        if($imagenesEliminadas <> null){
+            foreach($imagenesEliminadas as $imagenesEliminada);
+                $imagenesEliminada->delete();       
+        }
+        $cuenta = Cuenta::where('user',$cuenta)->first();
+        $cuenta->delete();
+        return redirect()->route('admin.index');
+    }
+
 }

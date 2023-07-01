@@ -17,7 +17,6 @@
                             @foreach($cuentas as $index => $cuenta)
                                 <option name="compadre" value="{{$cuenta->user}}">{{$cuenta->nombre}} {{$cuenta->apellido}}</option>
                             @endforeach
-                            
                         </select>
                         <button class="btn btn-success" type="submit">Filtrar</button>
                     </div>
@@ -36,6 +35,10 @@
                                 <img src="{{asset($imagen->archivo)}}" class="card-img-top">
                                 <hr>
                                 <h6>Imagen subida por: {{$imagen->cuenta_user}}</h6>
+                                <form action="{{route('admin.banear',$imagen->titulo)}}">
+                                    <input type="text" name="nombrefoto" value="{{$imagen->cuenta_user}}" hidden>
+                                    <button class="btn btn-danger" type="submit">Banear</button>
+                                </form>
                             </div>                       
                         </div> 
                     @endif

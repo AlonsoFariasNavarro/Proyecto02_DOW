@@ -34,7 +34,7 @@
                                         </td>
                                         <td>
                                             <div class="col d-flex m-2" style="">
-                                                <form action="{{route('artistas.destroy',$cuenta->user)}}" method="POST">
+                                                <form action="{{route('admin.destroy',$cuenta->user)}}" method="POST">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-sm btn-danger p-0 my-0" type="submit">

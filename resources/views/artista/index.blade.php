@@ -15,11 +15,18 @@
                             @if(auth()->user()->user ==$imagen->cuenta_user)                              
                             <div class="card m-3">
                                 <div class="card-header align-middle text-center">
-                                    <h6>titulo</h6>
+                                    <h6>{{$imagen->titulo}}</h6>
                                 </div>                                   
                                 <div class="card-body">
-                                    {{$imagen->titulo}}
+                                    <img src="{{asset($imagen->archivo)}}" class="card-img-top">
                                     <hr>
+                                    <h6>Imagen subida por: {{$imagen->cuenta_user}}</h6>
+                                    @if($imagen->baneada == 1)
+                                        <span style="color:red;">
+                                            <h6>Imagen Baneada</h6>
+                                        </span>
+                                        <p>Motivo del ban: {{$imagen->motivo_ban}}</p>
+                                    @endif
                                 </div>                       
                             </div>  
                             @endif
@@ -34,7 +41,7 @@
                         <h2 class="text-center" >Agregar foto</h2>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{route('artista.agregar')}}">
+                        <form method="POST" action="{{route('artista.agregar')}}" enctype="multipart/form-data">
                                 @csrf   
                                 <div class="mb-3">
                                     <label for="" class="form-label">User</label>
@@ -42,11 +49,11 @@
                                 </div>                           
                                 <div class="mb-3">
                                     <label for="" class="form-label">Titulo de la imagen</label>
-                                    <input type="text" class="form-control" id="titulo"name="titulo">
+                                    <input type="text" class="form-control" id="titulo" name="titulo">
                                 </div>
                                 <div>
                                     <label for="formFileLg" class="form-label">SELECCIONA FOTO</label>
-                                    <input class="form-control form-control-lg" id="formFileLg" type="file">
+                                    <input class="form-control" id="imagen" type="file" name="archivo" accept="image/*">
                                 </div>                                                          
                                 <button type="submit" class="btn btn-primary m-3">Subir imagen</button>                               
                         </form>                            
