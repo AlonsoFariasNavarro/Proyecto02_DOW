@@ -41,9 +41,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{Route('artista.index')}}">Perfil</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Fotos</a>
-                        </li>
                     @endif
                 @else
                     <h5>Bienvenido a IMG Folder</h5>

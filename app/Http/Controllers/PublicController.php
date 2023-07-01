@@ -16,12 +16,17 @@ class PublicController extends Controller
     public function login(){
         return view('public.login');
     }
+    
+    public function filtrado(Request $request ){
+        if($request->compadre== 'reset' ){
+            $imagenes = Imagen::orderBy('id')->get();
+            $cuentas = Cuenta::orderBy('user')->get();
+            return view('public.index',compact(['imagenes','cuentas']));
 
-    public function filtrado(Request $request){
-        echo($request->compadre);
-        exit();
-        $imagenes = Imagen::find($request->compadre);
-        $cuentas = Cuenta::find($request->compadre)->first();
-        return view('public.index',compact(['imagenes','cuentas']));
+        }
+        $usuario=$request->compadre;
+        $cuentas = Cuenta::orderBy('user')->get();
+        $imagenes = Imagen::orderBy('id')->get();
+        return view('public.filtrado',compact(['imagenes','usuario','cuentas']));
     }
 }

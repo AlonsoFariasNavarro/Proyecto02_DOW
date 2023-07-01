@@ -17,16 +17,18 @@
                             @foreach($cuentas as $index => $cuenta)
                                 <option name="compadre" value="{{$cuenta->user}}">{{$cuenta->nombre}} {{$cuenta->apellido}}</option>
                             @endforeach
-                            
+                            <option class="bg-ligh" value="reset">Quitar filtro</option>
                         </select>
                         <button class="btn btn-success" type="submit">Filtrar</button>
                     </div>
                 </form>
             </div>
+            
             <hr>
             <!-- COL de los cards -->
             <div class="col d-flex justify-content-center">
                 @foreach($imagenes as $imagen)
+                    @if($usuario ==$imagen->cuenta_user)
                     <div class="card m-3">
                         <div class="card-header align-middle text-center">
                             <h6>{{$imagen->titulo}}</h6>
@@ -37,6 +39,7 @@
                             subida por: {{$imagen->cuenta_user}}
                         </div>
                     </div>
+                    @endif
                 @endforeach
             </div>
         </div>
