@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginController;
 Route::get('/',[PublicController::class,'index'])->name('public.index');
 Route::get('/login',[PublicController::class,'login'])->name('public.login');
 Route::get('/logout',[LoginController::class,'logout'])->name('public.logout');
+Route::post('/filtrado',[PublicController::class,'filtrado'])->name('public.filtrado');
 Route::get('/filtrado',[PublicController::class,'filtrado'])->name('public.filtrado');
 
 //admin
