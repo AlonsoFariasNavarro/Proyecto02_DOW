@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Cuenta;
 use App\Models\Imagen;
 use App\Models\Perfil;
+use App\Http\Middleware\AdminMiddleware;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +12,9 @@ class AdminController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
+        $this->middleware(AdminMiddleware::class);
     }
+
     public function index(){
         $imagenes = Imagen::orderBy('id')->get();
         $perfiles = Perfil::orderBy('id')->get();

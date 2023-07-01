@@ -7,13 +7,15 @@ use App\Http\Requests\ArtistaRequest;
 use App\Models\Cuenta;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Imagen;
+use App\Http\Middleware\ArtistaMiddleware;
 
 class ArtistaController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
+        $this->middleware(ArtistaMiddleware::class);
     }
-    
+
     public function registrar(){
         return view('artista.registrar');
     }

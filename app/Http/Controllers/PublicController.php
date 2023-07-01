@@ -13,6 +13,7 @@ class PublicController extends Controller
         $cuentas = Cuenta::orderBy('user')->get();
         return view('public.index',compact(['imagenes','cuentas']));
     }
+    
     public function login(){
         return view('public.login');
     }

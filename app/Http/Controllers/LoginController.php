@@ -11,9 +11,6 @@ use App\Models\Perfil;
 
 class LoginController extends Controller
 {
-    public function __construct(){
-        $this->middleware('auth')->except(['autenticar','logout']);
-    }
 
     public function autenticar(Request $request){
         $user = $request->user;
