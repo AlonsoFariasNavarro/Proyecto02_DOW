@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ArtistaRequest;
 use App\Models\Cuenta;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Imagen;
 
 class ArtistaController extends Controller
 {
@@ -14,7 +15,8 @@ class ArtistaController extends Controller
         return view('artista.registrar');
     }
     public function index(){
-        return view('artista.index');
+        $imagenes = Imagen::orderBy('id')->get();
+        return view('artista.index',compact(['imagenes']));
     }
     
 
@@ -33,6 +35,7 @@ class ArtistaController extends Controller
     public function agregarImagen(Request $request){
         $request->file('archivo')->storeAs('',$request->file('archivo')->getClientOriginalName());
         $imagen= new Imagen();
+        $imagen->cuenta_user =auth()->user()->user;
         $imagen->titulo = $request->titulo;
         $imagen->archivo=$request->file('archivo')->getClientOriginalName();
         $imagen->baneada =false;
