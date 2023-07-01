@@ -1,9 +1,19 @@
 @extends('templates.master')
 
+@section('navbar')
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{{Route('public.index')}}">Inicio</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{{Route('admin.index')}}">Cuentas</a>
+    </li>
+@endsection
+
+
 @section('contenido-principal')
-    <div class="container justify-content-center align-items-center bg-light">
+    <div class="container-fluid justify-content-center align-items-center bg-ligh min-vh-100">
         <div class="row">
-            <div class="col">
+            <div class="col my-3">
                 <div class="card">
                     <div class="card-header text-center">
                         <h5>Cuentas</h5>
@@ -49,6 +59,17 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Perfiles</h5>
+                    </div>
+                    <div class="card-body">
+                        <li>Administrador</li>
+                        <li>Artista</li>
                     </div>
                 </div>
             </div>
