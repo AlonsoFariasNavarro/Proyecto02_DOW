@@ -38,9 +38,15 @@
                                         <input type="password" name="password" id="password" class="form-control">
                                     </div>
                                     <div class="row">                                      
-                                        <div class="col-4 py-4">
+                                        <div class="col py-3">
                                             <button class="btn btn-success" type="submit">Iniciar Sesion</button>
-                                        </div>
+                                        </div>                                       
+                                    </div>
+                                    <div class="row">
+                                        <div class="col  ">
+                                            <h6>¿No tienes cuenta?</h6>
+                                            <a href="{{route('artista.registrar')}}" class="btn btn-info">Crear cuenta</a>
+                                        </div> 
                                     </div>
                                 </form>
                             </div>
