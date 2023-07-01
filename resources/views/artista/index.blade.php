@@ -44,7 +44,11 @@
                         <h2 class="text-center" >Agregar foto</h2>
                         <div class="card-body">
                         <form method="POST" action="{{route('artista.agregar')}}">
-                                @csrf                                
+                                @csrf   
+                                <div class="mb-3">
+                                    <label for="" class="form-label">User</label>
+                                    <input type="text" class="form-control" id="titulo"name="titulo" value>
+                                </div>                           
                                 <div class="mb-3">
                                     <label for="" class="form-label">Titulo de la imagen</label>
                                     <input type="text" class="form-control" id="titulo"name="titulo">
