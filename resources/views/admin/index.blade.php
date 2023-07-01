@@ -39,7 +39,7 @@
                                                     @csrf
                                                     <button class="btn btn-sm btn-danger p-0 my-0" type="submit"><span class="material-icons">delete</span></button>
                                                 </form>
-                                                <form action="#">
+                                                <form action="{{route('admin.editar',$cuenta->user)}}">
                                                     @csrf
                                                     <button class="btn btn-sm btn-warning text-white mx-2 my-0 p-0" type="submit"><span class="material-icons">edit</span></button>
                                                 </form>
