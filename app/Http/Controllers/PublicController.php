@@ -16,4 +16,12 @@ class PublicController extends Controller
     public function login(){
         return view('public.login');
     }
+
+    public function filtrado(Request $request){
+        echo($request->compadre);
+        exit();
+        $imagenes = Imagen::find($request->compadre);
+        $cuentas = Cuenta::find($request->compadre)->first();
+        return view('public.index',compact(['imagenes','cuentas']));
+    }
 }
