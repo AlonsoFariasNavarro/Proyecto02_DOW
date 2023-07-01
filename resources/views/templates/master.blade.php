@@ -21,6 +21,7 @@
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            @yield('user')
             <div class="col-4"></div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -43,7 +44,12 @@
                 </ul>
                 </li>
             </ul>
+            @if(auth()->check())
+                <a href="{{route('public.login')}}" class="btn btn-success">Cerrar sesion</a>
+            @else
                 <a href="{{route('public.login')}}" class="btn btn-success">Iniciar Sesion</a>
+            @endif
+                
         </div>
     </div>
     </nav>

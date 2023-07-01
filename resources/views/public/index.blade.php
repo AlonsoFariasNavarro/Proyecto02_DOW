@@ -1,5 +1,9 @@
 @extends('templates.master')
-
+@section('user')
+    @if(auth()->check())
+        <p> Bienvenido {{auth()->user()->user}}</p>
+    @endif
+@endsection
 @section('contenido-principal')
     <div class="container-fluid justify-content-center align-items-center bg-light">
         <div class="row">
