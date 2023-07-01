@@ -1,23 +1,29 @@
 @extends('templates.master')
 @section('user')
     @if(auth()->check())
-        <p> Bienvenido {{auth()->user()->user}}</p>
+        <p class=""> Bienvenido {{auth()->user()->user}}</p>
     @endif
 @endsection
+
 @section('contenido-principal')
-    <div class="container-fluid justify-content-center align-items-center bg-light">
+    <div class="container-fluid justify-content-center align-items-center bg-ligh min-vh-100">
         <div class="row">
-            <!-- COL de los cards -->
-            <div class="col d-flex justify-content-end mb-2">
-                    <select class="form-select" >
-                        <option selected hidden>Filtrar Artistas</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="3">Quitar Filtro</option>
-                    </select>
+            <div class="col my-3">
+                <form action="{{route('public.filtrado')}}">
+                    @csrf
+                    <div class="input-group">
+                        <select class="form-select" id="inputGroupSelect04">
+                            <option selected hidden>Filtrar Artista</option>
+                            @foreach($cuentas as $index => $cuenta)
+                                <option name="compadre" value="{{$cuenta->user}}">{{$cuenta->nombre}} {{$cuenta->apellido}}</option>
+                            @endforeach
+                        </select>
+                        <button class="btn btn-success" type="submit">Filtrar</button>
+                    </div>
+                </form>
             </div>
             <hr>
+            <!-- COL de los cards -->
             <div class="col d-flex justify-content-center">
                 @foreach($imagenes as $imagen)
                     <div class="card m-3">

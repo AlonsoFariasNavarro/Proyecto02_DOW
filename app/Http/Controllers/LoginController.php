@@ -21,12 +21,17 @@ class LoginController extends Controller
         $password = $request->password;
 
         if(Auth::attempt(['user'=>$user,'password'=>$password])){
-            return redirect()->route('artista.index');
+            return redirect()->route('public.index');
 
         }
 
         return back()->withErrors([
             'user' => 'Credenciales Incorrectas',
         ])->onlyInput('user');
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('public.index');
     }
 }
