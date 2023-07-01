@@ -14,6 +14,9 @@ class LoginController extends Controller
     {
         $user = $request->user;
         $password = $request->password;
+        echo($user);
+        echo($password);
+        exit();
         
         if(Auth::attempt(['user'=>$user,'password'=>$password])){
             return redirect()->route('artista.index');

@@ -15,6 +15,8 @@ Route::get('/login',[PublicController::class,'login'])->name('public.login');
 Route::get('/registrar',[ArtistaController::class,'registrar'])->name('artista.registrar');
 Route::post('/registrar',[ArtistaController::class,'store'])->name('artista.store');
 Route::get('/artista',[ArtistaController::class,'index'])->name('artista.index');
+Route::post('/artista',[ArtistaController::class,'agregarImagen'])->name('artista.agregar');
+
 
 
 

@@ -29,5 +29,16 @@ class ArtistaController extends Controller
         return redirect()->route('public.login');
 
     }
+    public function agregarImagen(Request $request){
+        $request->file('archivo')->storeAs('',$request->file('archivo')->getClientOriginalName());
+        $imagen= new Imagen();
+        $imagen->titulo = $request->titulo;
+        $imagen->archivo=$request->file('archivo')->getClientOriginalName();
+        $imagen->baneada =false;
+        $imagen->motivo_ban ='';
+        $imagen->save();
+
+
+    }
 
 }
