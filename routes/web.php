@@ -23,14 +23,16 @@ Route::put('/admin/editar/{user}/confirmar/update',[AdminController::class,'upda
 Route::get('/admin/fotos',[AdminController::class,'fotos'])->name('admin.fotos');
 Route::get('/admin/fotos/banear/{foto}',[AdminController::class,'banear'])->name('admin.banear');
 
+Route::put('/admin/foto/banear',[AdminController::class,'confirmarBan'])->name('admin.confirmarBan');
+
 //artista
 Route::get('/artista',[ArtistaController::class,'index'])->name('artista.index');
 Route::post('/artista/subirimagen',[ArtistaController::class,'upload'])->name('artista.agregar');
 
 
 //artista
-Route::get('/registrar',[ArtistaController::class,'registrar'])->name('artista.registrar');
-Route::post('/registrar',[ArtistaController::class,'store'])->name('artista.store');
+Route::get('/registrar',[LoginController::class,'registrar'])->name('login.registrar');
+Route::post('/registrar',[LoginController::class,'store'])->name('login.store');
 
 
 

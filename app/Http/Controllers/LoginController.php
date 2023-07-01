@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Cuenta;
 use App\Models\Imagen;
 use App\Models\Perfil;
@@ -29,5 +30,21 @@ class LoginController extends Controller
     public function logout(){
         Auth::logout();
         return redirect()->route('public.index');
+    }
+
+    public function registrar(){
+        return view('public.registrar');
+    }
+
+    public function store(Request $request){
+        $cuenta = new Cuenta();
+        $cuenta->perfil_id =2;
+        $cuenta->user = $request->user;
+        $cuenta->password = Hash::make($request->password);
+        $cuenta->nombre = $request->nombre;
+        $cuenta->apellido = $request->apellido; 
+        $cuenta->save();
+        return redirect()->route('public.login');
+
     }
 }

@@ -36,7 +36,7 @@
                                 <hr>
                                 <h6>Imagen subida por: {{$imagen->cuenta_user}}</h6>
                                 <form action="{{route('admin.banear',$imagen->titulo)}}">
-                                    <input type="text" name="nombrefoto" value="{{$imagen->cuenta_user}}" hidden>
+                                    <input type="text" name="titulo" value="{{$imagen->titulo}}" hidden>
                                     <button class="btn btn-danger" type="submit">Banear</button>
                                 </form>
                             </div>                       

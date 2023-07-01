@@ -48,19 +48,29 @@ class AdminController extends Controller
         $cuentas = Cuenta::orderBy('user')->get();
         return view('admin.fotos',compact(['imagenes','cuentas','perfiles']));
     }
-
-    public function banear(Request $request, $titulo){
-        $foto = Imagen::where('titulo',$titulo)->first();
-
+    public function confirmarBan(Request $request){
+        $motivo=$request->ban;
+        $foto = Imagen::where('titulo',$request->titulo)->first();
+        $foto->motivo_ban = $motivo;
+        $foto->baneada = true;
+        $foto->save();
+    }
+    public function banear(Request $request, $usuario){
+        $usuario = Cuenta::orderBy('user')->first();
+        $foto = Imagen::where('titulo',$request->titulo)->first();
+        return view('admin.banear',compact(['usuario','foto']));
+        
     }
 
     public function destroy($cuenta){
-        $imagenesEliminadas = Imagen::where('cuenta_user',$cuenta)->first();
-        if($imagenesEliminadas <> null){
+        $imagenesEliminadas = Imagen::where('cuenta_user',$cuenta)->get();
             foreach($imagenesEliminadas as $imagenesEliminada);
                 $imagenesEliminada->delete();       
-        }
+
         $cuenta = Cuenta::where('user',$cuenta)->first();
+        if(auth()->user()->user == $cuenta->user){
+            return redirect()->route('admin.index');
+        }
         $cuenta->delete();
         return redirect()->route('admin.index');
     }

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('titulo',20);
             $table->string('archivo',100);
             $table->boolean('baneada');
-            $table->text('motivo_ban');
+            $table->text('motivo_ban')->default(null);
 
             $table->string('cuenta_user',20);
 

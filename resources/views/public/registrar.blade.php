@@ -20,7 +20,7 @@
                         <h1>Agregar usuarios</h1>
                         <div class="card-body">
                             
-                            <form method="POST" action="{{route('artista.store')}}">
+                            <form method="POST" action="{{route('login.store')}}">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="NombreUsuario" class="form-label">Nombre de usuario</label>

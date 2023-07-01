@@ -45,7 +45,7 @@
                                     <div class="row">
                                         <div class="col  ">
                                             <h6>¿No tienes cuenta?</h6>
-                                            <a href="{{route('artista.registrar')}}" class="btn btn-info">Crear cuenta</a>
+                                            <a href="{{route('login.registrar')}}" class="btn btn-info">Crear cuenta</a>
                                         </div> 
                                     </div>
                                 </form>

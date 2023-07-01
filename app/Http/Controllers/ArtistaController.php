@@ -17,9 +17,6 @@ class ArtistaController extends Controller
         $this->middleware(ArtistaMiddleware::class);
     }
 
-    public function registrar(){
-        return view('artista.registrar');
-    }
     public function index(){
         $imagenes = Imagen::orderBy('id')->get();
         return view('artista.index',compact(['imagenes']));
@@ -29,17 +26,7 @@ class ArtistaController extends Controller
         return $request->all();
     }
     
-    public function store(Request $request){
-        $cuenta = new Cuenta();
-        $cuenta->perfil_id =2;
-        $cuenta->user = $request->user;
-        $cuenta->password = Hash::make($request->password);
-        $cuenta->nombre = $request->nombre;
-        $cuenta->apellido = $request->apellido; 
-        $cuenta->save();
-        return redirect()->route('public.login');
-
-    }
+    
     public function upload(Request $request){
         $request->validate([
             'titulo' => 'required|string',
