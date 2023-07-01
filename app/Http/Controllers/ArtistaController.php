@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArtistaRequest;
 use App\Models\Cuenta;
+use Illuminate\Support\Facades\Hash;
 
 class ArtistaController extends Controller
 {
@@ -22,7 +23,7 @@ class ArtistaController extends Controller
         $cuenta = new Cuenta();
         $cuenta->perfil_id =2;
         $cuenta->user = $request->user;
-        $cuenta->password = $request->password;
+        $cuenta->password = Hash::make($request->password);
         $cuenta->nombre = $request->nombre;
         $cuenta->apellido = $request->apellido;
         $cuenta->save();
