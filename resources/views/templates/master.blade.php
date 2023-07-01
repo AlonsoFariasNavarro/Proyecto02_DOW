@@ -27,15 +27,14 @@
             <div class="col-4"></div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 @if(auth()->check())
-                    @if(auth()->user()->perfil_id = 1)
+                    @if(auth()->user()->perfil_id == 1)
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{Route('public.index')}}">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{Route('admin.index')}}">Cuentas</a>
                         </li>
-                    @endif
-                    @if(auth()->user()->perfil_id = 2)
+                    @elseif(auth()->user()->perfil_id == 2)
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{Route('public.index')}}">Inicio</a>
                         </li>

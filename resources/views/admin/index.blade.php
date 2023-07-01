@@ -1,15 +1,5 @@
 @extends('templates.master')
 
-@section('navbar')
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{{Route('public.index')}}">Inicio</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{{Route('admin.index')}}">Cuentas</a>
-    </li>
-@endsection
-
-
 @section('contenido-principal')
     <div class="container-fluid justify-content-center align-items-center bg-ligh min-vh-100">
         <div class="row">
