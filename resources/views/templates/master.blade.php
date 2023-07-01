@@ -45,7 +45,7 @@
                 </li>
             </ul>
             @if(auth()->check())
-                <a href="{{route('public.login')}}" class="btn btn-success">Cerrar sesion</a>
+                <a href="{{route('public.logout')}}" class="btn btn-success">Cerrar sesion</a>
             @else
                 <a href="{{route('public.login')}}" class="btn btn-success">Iniciar Sesion</a>
             @endif

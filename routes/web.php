@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 
 Route::get('/',[PublicController::class,'index'])->name('public.index');
 Route::get('/login',[PublicController::class,'login'])->name('public.login');
+Route::get('/logout',[LoginController::class,'logout'])->name('public.logout');
 
 //admin
 Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
@@ -21,4 +22,5 @@ Route::post('/artista',[ArtistaController::class,'agregarImagen'])->name('artist
 
 
 //login
-Route::post('/artista2',[LoginController::class,'autenticar'])->name('usuarios.autenticar');
+Route::post('/usuario/login',[LoginController::class,'autenticar'])->name('usuarios.autenticar');
+Route::post('/usuario/logout',[LoginController::class,'logout'])->name('usuarios.logout');
