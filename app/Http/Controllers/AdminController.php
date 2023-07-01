@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
         $imagenes = Imagen::orderBy('id')->get();
         $perfiles = Perfil::orderBy('id')->get();

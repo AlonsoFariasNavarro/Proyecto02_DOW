@@ -10,7 +10,10 @@ use App\Models\Imagen;
 
 class ArtistaController extends Controller
 {
-    //
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function registrar(){
         return view('artista.registrar');
     }
@@ -19,7 +22,9 @@ class ArtistaController extends Controller
         return view('artista.index',compact(['imagenes']));
     }
     
-
+    public function subirimagen(Request $request){
+        return $request->all();
+    }
     
     public function store(Request $request){
         $cuenta = new Cuenta();
@@ -27,7 +32,7 @@ class ArtistaController extends Controller
         $cuenta->user = $request->user;
         $cuenta->password = Hash::make($request->password);
         $cuenta->nombre = $request->nombre;
-        $cuenta->apellido = $request->apellido;
+        $cuenta->apellido = $request->apellido; 
         $cuenta->save();
         return redirect()->route('public.login');
 

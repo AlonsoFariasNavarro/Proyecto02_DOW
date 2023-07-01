@@ -48,7 +48,7 @@
                                     <label for="formFileLg" class="form-label">SELECCIONA FOTO</label>
                                     <input class="form-control form-control-lg" id="formFileLg" type="file">
                                 </div>                                                          
-                                <button type="submit" class="btn btn-primary m-3">Agregar usuario</button>                               
+                                <button type="submit" class="btn btn-primary m-3">Subir imagen</button>                               
                         </form>                            
                     </div>                                  
                 </div>

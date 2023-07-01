@@ -14,6 +14,10 @@ Route::post('/filtrado',[PublicController::class,'filtrado'])->name('public.filt
 Route::get('/filtrado',[PublicController::class,'filtrado'])->name('public.filtrado');
 
 //admin
+Route::middleware('auth')->group(function () {
+
+
+});
 Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
 Route::get('/admin/perfiles',[AdminController::class,'perfiles'])->name('admin.perfil');
 Route::delete('/admin{cuenta}',[ArtistaController::class,'destroy'])->name('artistas.destroy');
@@ -21,12 +25,14 @@ Route::get('/admin/editar/{user}',[AdminController::class,'editar'])->name('admi
 Route::get('/admin/editar/{user}/confirmar',[AdminController::class,'confirmar'])->name('admin.confirmar');
 Route::put('/admin/editar/{user}/confirmar/update',[AdminController::class,'update'])->name('admin.update');
 
+//artista
+Route::get('/artista',[ArtistaController::class,'index'])->name('artista.index');
+Route::post('/artista',[ArtistaController::class,'agregarImagen'])->name('artista.agregar');
 
 //artista
 Route::get('/registrar',[ArtistaController::class,'registrar'])->name('artista.registrar');
 Route::post('/registrar',[ArtistaController::class,'store'])->name('artista.store');
-Route::get('/artista',[ArtistaController::class,'index'])->name('artista.index');
-Route::post('/artista',[ArtistaController::class,'agregarImagen'])->name('artista.agregar');
+
 
 
 //login
