@@ -11,7 +11,8 @@ class AdminController extends Controller
 {
     public function index(){
         $imagenes = Imagen::orderBy('id')->get();
+        $perfiles = Perfil::orderBy('id')->get();
         $cuentas = Cuenta::orderBy('user')->get();
-        return view('admin.index',compact(['imagenes','cuentas']));
+        return view('admin.index',compact(['imagenes','cuentas','perfiles']));
     }
 }

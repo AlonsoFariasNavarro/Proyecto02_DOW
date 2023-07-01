@@ -14,6 +14,7 @@ Route::get('/filtrado',[PublicController::class,'filtrado'])->name('public.filtr
 
 //admin
 Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
+Route::get('/admin/perfiles',[AdminController::class,'perfiles'])->name('admin.perfil');
 
 
 //artista

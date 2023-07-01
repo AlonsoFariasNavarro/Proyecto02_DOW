@@ -21,28 +21,34 @@
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            @yield('user')
+            @if(auth()->check())
+                <p class="fw-bold"> Bienvenido {{auth()->user()->user}}</p>
+            @endif
             <div class="col-4"></div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-
-                <!-- <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-                </li> -->
-
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Filtrar Artista
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-                </li>
+                @if(auth()->check())
+                    @if(auth()->user()->perfil_id = 1)
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{Route('public.index')}}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{Route('admin.index')}}">Cuentas</a>
+                        </li>
+                    @endif
+                    @if(auth()->user()->perfil_id = 2)
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{Route('public.index')}}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{Route('artista.index')}}">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Fotos</a>
+                        </li>
+                    @endif
+                @else
+                    <h5>Bienvenido a IMG Folder</h5>
+                @endif
             </ul>
             @if(auth()->check())
                 <a href="{{route('public.logout')}}" class="btn btn-success">Cerrar sesion</a>
