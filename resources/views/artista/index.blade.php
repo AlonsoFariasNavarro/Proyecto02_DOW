@@ -21,7 +21,7 @@
                                         <hr>
                                     </div>                       
                                 </div>  
-                                @elseif($num==0)
+                                @elseif($num==0 )
                                 <h3>No tienes fotos.</h3>
                                 @endif
 
