@@ -33,6 +33,7 @@ class ArtistaController extends Controller
     public function agregarImagen(Request $request){
         $request->file('archivo')->storeAs('',$request->file('archivo')->getClientOriginalName());
         $imagen= new Imagen();
+        $imagen->cuenta_user =$request->user;
         $imagen->titulo = $request->titulo;
         $imagen->archivo=$request->file('archivo')->getClientOriginalName();
         $imagen->baneada =false;

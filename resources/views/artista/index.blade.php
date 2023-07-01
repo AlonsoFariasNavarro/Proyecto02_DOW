@@ -47,7 +47,7 @@
                                 @csrf   
                                 <div class="mb-3">
                                     <label for="" class="form-label">User</label>
-                                    <input type="text" class="form-control" id="titulo"name="titulo" value>
+                                    <input type="text" class="form-control "disabled id="user"name="user" value="{{auth()->user()->user}}">
                                 </div>                           
                                 <div class="mb-3">
                                     <label for="" class="form-label">Titulo de la imagen</label>
