@@ -21,7 +21,7 @@ class Cuenta extends Authenticatable
 
 
     public function perfil():BelongTo{
-        return $this->belongTo(Perfil::class);
+        return $this->belongsTo(Perfil::class);
     }
 
     public function imagenes():HasMany{
