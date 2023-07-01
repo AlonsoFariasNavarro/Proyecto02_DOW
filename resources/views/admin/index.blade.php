@@ -34,10 +34,12 @@
                                         </td>
                                         <td>
                                             <div class="col d-flex m-2" style="">
-                                                <form action="#" method="POST">
+                                                <form action="{{route('artistas.destroy',$cuenta->user)}}" method="POST">
                                                     @method('delete')
                                                     @csrf
-                                                    <button class="btn btn-sm btn-danger p-0 my-0" type="submit"><span class="material-icons">delete</span></button>
+                                                    <button class="btn btn-sm btn-danger p-0 my-0" type="submit">
+                                                        <span class="material-icons">delete</span>
+                                                    </button>
                                                 </form>
                                                 <form action="{{route('admin.editar',$cuenta->user)}}">
                                                     @csrf

@@ -45,4 +45,14 @@ class ArtistaController extends Controller
 
     }
 
+    public function destroy(Cuenta $cuenta){
+        $imagenesEliminada = Imagen::where('cuenta_user',$cuenta->user)->get();
+        foreach($imagenesEliminada as $imageneEliminada);
+            $imageneEliminada->delete();       
+        $cuenta->delete();
+        return redirect()->route('admin.index');
+
+    }
+
+
 }

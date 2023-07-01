@@ -15,6 +15,8 @@ Route::get('/filtrado',[PublicController::class,'filtrado'])->name('public.filtr
 
 //admin
 Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
+Route::get('/admin/perfiles',[AdminController::class,'perfiles'])->name('admin.perfil');
+Route::delete('/admin{cuenta}',[ArtistaController::class,'destroy'])->name('artistas.destroy');
 Route::get('/admin/editar/{user}',[AdminController::class,'editar'])->name('admin.editar');
 Route::get('/admin/editar/{user}/confirmar',[AdminController::class,'confirmar'])->name('admin.confirmar');
 Route::put('/admin/editar/{user}/confirmar/update',[AdminController::class,'update'])->name('admin.update');
