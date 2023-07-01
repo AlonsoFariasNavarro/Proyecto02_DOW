@@ -15,7 +15,9 @@
                         <select class="form-select" id="user" name="compadre">
                             <option selected hidden>Filtrar Artista</option>
                             @foreach($cuentas as $index => $cuenta)
-                                <option name="compadre" value="{{$cuenta->user}}">{{$cuenta->nombre}} {{$cuenta->apellido}}</option>
+                                @if($cuenta->perfil_id = 2)
+                                    <option name="compadre" value="{{$cuenta->user}}">{{$cuenta->nombre}} {{$cuenta->apellido}}</option>
+                                @endif
                             @endforeach
                             <option class="bg-ligh" value="reset">Quitar filtro</option>
                         </select>
@@ -34,7 +36,7 @@
                             <h6>{{$imagen->titulo}}</h6>
                         </div>
                         <div class="card-body">
-                            {{$imagen->archivo}}
+                            <img src="{{asset($imagen->archivo)}}" class="card-img-top">
                             <hr>
                             subida por: {{$imagen->cuenta_user}}
                         </div>

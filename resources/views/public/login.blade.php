@@ -10,16 +10,16 @@
 </head>
 
 <!-- style="background: linear-gradient(to bottom, #026597 40%, #990099 100%);" -->
-<body style="background: linear-gradient(to bottom, #074469 40%, #026597 100%);">
+<body class="bg-white">
     <div class="contariner-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center">
         <div class="row">
-            <div class="col rounded" style="height: 36rem; width: 33rem; background-color: #201C85;">
+            <div class="col rounded bg-ligh" style="height: 36rem; width: 33rem;">
                 <div class="row">
                     <div class="col d-flex flex-column align-items-center py-5">
                         <div class="rounded bg-white">
                             <img class=" rounded"style="width: 9rem;" src="">
                         </div>
-                        <div class="col py-3 text-white">
+                        <div class="col py-3">
                             <img src="{{asset('images/folder.png')}}" class="  mx-4 " style="height: 4rem;">
                             <h3 class="fb-bold">IMG Folder</h3>
                            
@@ -45,10 +45,11 @@
                                     <div class="row">
                                         <div class="col  ">
                                             <h6>¿No tienes cuenta?</h6>
-                                            <a href="{{route('login.registrar')}}" class="btn btn-info">Crear cuenta</a>
+                                            <a href="{{route('login.registrar')}}" class="btn btn-warning">Crear cuenta</a>
                                         </div> 
                                     </div>
                                 </form>
+                                <a href="{{route('public.index')}}" class="btn btn-primary mt-2">Volver</a>
                             </div>
                         </div>
                     </div>

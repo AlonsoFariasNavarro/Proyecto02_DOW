@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-fluid min-vh-100" style="background: #0eb396;">
+    <div class="container-fluid min-vh-100">
         <div class="row">
             <div class="col d-flex flex-column align-items-center py-5">
                 <div class="card">
@@ -38,8 +38,9 @@
                                     <label for="" class="form-label">Apellido</label>
                                     <input type="text" class="form-control" id="apellido" name="apellido">
                                 </div>                                                             
-                                <button type="submit" class="btn btn-primary">Agregar usuario</button>
+                                <button type="submit" class="btn btn-success">Agregar usuario</button>
                             </form>
+                            <a href="{{route('public.login')}}" class="btn btn-warning mt-2">Volver</a>
                         </div>
                     </div>
                 </div>

@@ -17,6 +17,7 @@
                         @csrf
                         <label class="my-2" for="titulo">Titulo</label>
                         <input name="titulo" type="text" class="form-control" value="{{$foto->titulo}}" disabled>
+                        <input name="titulo" type="text" class="form-control" value="{{$foto->titulo}}" hidden>
                         <label class="my-2" for="ban">Motivo de Ban</label>
                         <input name="ban" type="text" class="form-control">
                         <div class="d-flex justify-content-end pt-4">

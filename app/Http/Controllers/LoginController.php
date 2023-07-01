@@ -37,14 +37,22 @@ class LoginController extends Controller
     }
 
     public function store(Request $request){
-        $cuenta = new Cuenta();
-        $cuenta->perfil_id =2;
-        $cuenta->user = $request->user;
-        $cuenta->password = Hash::make($request->password);
-        $cuenta->nombre = $request->nombre;
-        $cuenta->apellido = $request->apellido; 
-        $cuenta->save();
-        return redirect()->route('public.login');
+        $r = Cuenta::find($request->user);
+        if($request->user == null){
+            return view('public.registrar');
+        }elseif($r <> null){
+            return view('public.registrar');
+        }else{
+            $cuenta = new Cuenta();
+            $cuenta->perfil_id =2;
+            $cuenta->user = $request->user;
+            $cuenta->password = Hash::make($request->password);
+            $cuenta->nombre = $request->nombre;
+            $cuenta->apellido = $request->apellido; 
+            $cuenta->save();
+            return redirect()->route('public.login');
+        }
+        
 
     }
 }

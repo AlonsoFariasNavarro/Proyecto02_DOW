@@ -50,7 +50,7 @@ class AdminController extends Controller
     }
     public function confirmarBan(Request $request){
         $motivo=$request->ban;
-        $foto = Imagen::where('titulo',$request->titulo)->first();
+        $foto = Imagen::find($request->titulo)->get();
         $foto->motivo_ban = $motivo;
         $foto->baneada = true;
         $foto->save();
